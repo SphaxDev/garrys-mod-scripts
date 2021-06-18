@@ -1,23 +1,3 @@
---[[------------------------------
-		ServerAutoRestart
-	
-	Beta Version 0.1
-	* Download updates here: *
-	Author: Steam: 𝓢𝓹𝓱𝓪𝔁𝓓𝓮𝓿     Discord: 𝓢𝓹𝓱𝓪𝔁𝓓𝓮𝓿 ツ#4737    Github: SphaxDev
-	
-** Put this in addons folder
-directory should be
-/addons/serverautorestart/lua/autorun/server/serverautorestart.lua
-OR, you can copy serverautorestart.lua and put it into garrysmod/lua/autorun/server/
-Both work (if you don't know to much create an addon else it's better to put it into lua folder) **
-
-Original code here (https://forums.ulyssesmod.net/index.php?topic=7057.0) => LuaTenshi (code wasn't working but yeah, it inspired me a little)
-------------------------------]]--
-
---[[--------------------------
-		Configuration
---------------------------]]--
-
 local ServerAutoRestart = {} -- DO NOT TOUCH
 
 
@@ -46,12 +26,12 @@ local ServerAutoRestart_AdvertMsg4 = "SphaxRestart | The server will restart in 
 
 local ServerAutoRestart_AdvertBefore5 = false
 local ServerAutoRestart_AdvertTime5 = "HH:MM" -- Put when you want to advert that there will be a restart
-local ServerAutoRestart_AdvertMsg5 = "SphaxRestart | The server will restart in X minutes."
+local ServerAutoRestart_AdvertMsg5 = "The server will restart in X minutes."
 
-local ServerAutoRestart_LangMin = "SphaxRestart | Der Server startet in einer Minute neu! !"
-local ServerAutoRestart_LangSecs = "SphaxRestart | The server will restart in %s seconds !" -- %s will be seconds here, do not edit it
-local ServerAutoRestart_LangSec = "SphaxRestart | The server will restart in 1 second !"
-local ServerAutoRestart_LangRes = "SphaxRestart | Server startet neu."
+local ServerAutoRestart_LangMin = "Der Server startet in einer Minute neu! !"
+local ServerAutoRestart_LangSecs = "The server will restart in %s seconds !" -- %s will be seconds here, do not edit it
+local ServerAutoRestart_LangSec = "The server will restart in 1 second !"
+local ServerAutoRestart_LangRes = "Server startet neu."
 
 
 
@@ -150,6 +130,7 @@ timer.Create( "ServerAutoRestartTimer", 60, 0, ServerAutoRestartFunc ) -- Checks
 if ServerAutoRestart_EnableCommand then
 	concommand.Add( "restartserver", function( ply, cmd, args )
 		if ply:IsSuperAdmin() then
+				if 
 			PrintMessage( HUD_PRINTTALK, ServerAutoRestart_LangRes )
 			timer.Simple( 0.5, function()
 				RunConsoleCommand("map ", game.GetMap()) -- Reload the same map
