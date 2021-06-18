@@ -128,7 +128,7 @@ function ServerAutoRestartFunc()
 														timer.Simple( 1, function()
 															PrintMessage( HUD_PRINTTALK, ServerAutoRestart_LangRes )
 															timer.Simple( 0.5, function() -- I know it does not restart at 1min but 1min00,5s but they need to read that server is restarting :) you can edit timer to 0.1 if you want
-																RunConsoleCommand("changelevel", game.GetMap()) -- Reload the same map
+																RunConsoleCommand("map ", game.GetMap()) -- Reload the same map
 															end)
 														end)
 													end)
