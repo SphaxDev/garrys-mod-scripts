@@ -152,7 +152,7 @@ if ServerAutoRestart_EnableCommand then
 		if ply:IsSuperAdmin() then
 			PrintMessage( HUD_PRINTTALK, ServerAutoRestart_LangRes )
 			timer.Simple( 0.5, function()
-				RunConsoleCommand("changelevel", game.GetMap()) -- Reload the same map
+				RunConsoleCommand("map ", game.GetMap()) -- Reload the same map
 			end)
 		end
 	end)
